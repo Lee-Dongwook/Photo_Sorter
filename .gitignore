@@ -14,6 +14,9 @@ env/
 *.swp
 *.swo
 
+# 업로드/간이 DB
+data/
+
 # Output / 사진 데이터 (선택: 실제 사진은 커밋 제외 시 아래 주석 해제)
 # output/*
 # kids/*
