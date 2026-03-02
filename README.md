@@ -40,3 +40,31 @@
 ### Output
 
 - `output/철수/`, `output/영희/` 폴더로 사진 **복사** 또는 **이동**
+
+---
+
+## 3. MVP 초기 셋팅 (Quick Start)
+
+```bash
+# 가상환경 생성 및 의존성 설치
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# CLI 실행 (핵심 로직 구현 후 동작)
+python main.py
+
+# Streamlit 대시보드 (선택)
+streamlit run app.py
+```
+
+**폴더 구조**
+
+| 경로 | 용도 |
+|------|------|
+| `kids/` | 기준 사진 (예: 철수.jpg, 영희.jpg) |
+| `target/` | 분류할 대상 사진 |
+| `output/` | 인물별로 분류된 결과 (복사/이동) |
+
+**구현 예정 (스켈레톤만 있음)**  
+핵심 로직은 `src/sorter.py`의 `load_reference_encodings`, `scan_target_photos`, `match_face_to_person`, `classify_and_save`에 차근차근 구현하면 됩니다. 설정은 `config.py`에서 변경 가능합니다.

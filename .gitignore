@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Output / 사진 데이터 (선택: 실제 사진은 커밋 제외 시 아래 주석 해제)
+# output/*
+# kids/*
+# target/*
+# !output/.gitkeep
+# !kids/.gitkeep
+# !target/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db

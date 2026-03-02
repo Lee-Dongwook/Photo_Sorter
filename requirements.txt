@@ -1,0 +1,12 @@
+# Photo Sorter - MVP
+# Python 3.9+
+
+# Face recognition (dlib 기반)
+face-recognition>=1.3.0
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# GUI (선택)
+streamlit>=1.28.0
