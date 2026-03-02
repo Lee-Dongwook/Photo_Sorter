@@ -3,7 +3,7 @@
 #       make app    → Streamlit 대시보드 실행
 #       make run    → make와 동일 (CLI)
 
-.PHONY: run app help install
+.PHONY: run app help install test
 
 # 기본 타깃: CLI 실행
 run:
@@ -16,11 +16,16 @@ default: run
 app:
 	streamlit run app.py
 
+# 유닛 테스트
+test:
+	python -m pytest tests/ -v
+
 # 도움말
 help:
 	@echo "Photo Sorter - 사용법"
 	@echo "  make        또는  make run  → CLI 실행 (python main.py)"
 	@echo "  make app                    → Streamlit 대시보드 (streamlit run app.py)"
+	@echo "  make test                   → pytest 유닛 테스트"
 	@echo "  make help                   → 이 도움말"
 
 # 가상환경 + 의존성 설치 (선택)
