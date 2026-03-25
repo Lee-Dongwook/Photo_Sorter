@@ -107,7 +107,7 @@ import { LoginForm } from "app/features/auth";
 
 // WRONG
 import { Button } from "../../../shared/ui";
-import { Button } from "@/shared/ui";
+import { Button } from "app/shared/ui";
 ```
 
 ### Same-Slice Imports (Relative Path)
