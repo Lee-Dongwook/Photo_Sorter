@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   description: "아이들 사진을 활동별로 분류하고 포토북을 만들어보세요",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover" as const,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

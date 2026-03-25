@@ -32,18 +32,18 @@ export const PhotoGallery = () => {
         : currentActivity?.name ?? "";
 
   return (
-    <div className="flex flex-1 flex-col gap-4 p-6">
+    <div className="flex flex-1 flex-col gap-3 p-3 md:gap-4 md:p-6">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           {currentActivity && (
             <span
-              className="h-4 w-4 rounded-full"
+              className="h-3.5 w-3.5 rounded-full md:h-4 md:w-4"
               style={{ backgroundColor: currentActivity.color }}
               aria-hidden="true"
             />
           )}
-          <h2 className="text-xl font-bold">{title}</h2>
-          <span className="text-sm text-muted-foreground">
+          <h2 className="text-lg font-bold md:text-xl">{title}</h2>
+          <span className="text-xs text-muted-foreground md:text-sm">
             {filteredPhotos.length}장
           </span>
         </div>
@@ -54,21 +54,21 @@ export const PhotoGallery = () => {
 
       {filteredPhotos.length === 0 ? (
         <div className="flex flex-1 flex-col items-center justify-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-            <ImageIcon className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted md:h-16 md:w-16">
+            <ImageIcon className="h-7 w-7 text-muted-foreground md:h-8 md:w-8" aria-hidden="true" />
           </div>
           <div className="text-center">
-            <p className="font-medium text-muted-foreground">
+            <p className="text-sm font-medium text-muted-foreground md:text-base">
               사진이 없습니다
             </p>
-            <p className="mt-1 text-sm text-muted-foreground/70">
+            <p className="mt-1 text-xs text-muted-foreground/70 md:text-sm">
               아래에서 사진을 업로드해 보세요
             </p>
           </div>
         </div>
       ) : (
         <div
-          className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+          className="grid grid-cols-3 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
           role="grid"
           aria-label="사진 목록"
         >

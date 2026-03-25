@@ -67,9 +67,9 @@ export const PhotobookViewer = ({ photobookId }: IPhotobookViewerProps) => {
   const currentPhoto = photobookPhotos[currentPage];
 
   return (
-    <div className="flex flex-1 flex-col items-center gap-6 p-8">
+    <div className="flex flex-1 flex-col items-center gap-4 p-4 md:gap-6 md:p-8">
       <div className="text-center">
-        <h1 className="text-2xl font-bold">{photobook.title}</h1>
+        <h1 className="text-xl font-bold md:text-2xl">{photobook.title}</h1>
         {activity && (
           <div className="mt-1 flex items-center justify-center gap-2">
             <span
@@ -77,14 +77,14 @@ export const PhotobookViewer = ({ photobookId }: IPhotobookViewerProps) => {
               style={{ backgroundColor: activity.color }}
               aria-hidden="true"
             />
-            <span className="text-sm text-muted-foreground">
+            <span className="text-xs text-muted-foreground md:text-sm">
               {activity.name}
             </span>
           </div>
         )}
       </div>
 
-      <Card className="flex aspect-[3/4] w-full max-w-lg items-center justify-center overflow-hidden bg-white p-4 shadow-xl print:shadow-none">
+      <Card className="flex aspect-[3/4] w-full max-w-lg items-center justify-center overflow-hidden bg-white p-2 shadow-xl print:shadow-none md:p-4">
         {currentPhoto && imageUrls.has(currentPhoto.id) ? (
           <img
             src={imageUrls.get(currentPhoto.id)}
@@ -98,7 +98,7 @@ export const PhotobookViewer = ({ photobookId }: IPhotobookViewerProps) => {
         )}
       </Card>
 
-      <div className="flex items-center gap-4 print:hidden" role="navigation" aria-label="포토북 페이지 네비게이션">
+      <div className="flex items-center gap-3 print:hidden md:gap-4" role="navigation" aria-label="포토북 페이지 네비게이션">
         <Button
           variant="outline"
           size="icon"
@@ -108,7 +108,7 @@ export const PhotobookViewer = ({ photobookId }: IPhotobookViewerProps) => {
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
-        <span className="text-sm text-muted-foreground" aria-live="polite">
+        <span className="text-xs text-muted-foreground md:text-sm" aria-live="polite">
           {currentPage + 1} / {totalPages}
         </span>
         <Button
@@ -123,18 +123,18 @@ export const PhotobookViewer = ({ photobookId }: IPhotobookViewerProps) => {
           <ChevronRight className="h-4 w-4" />
         </Button>
         <Button variant="outline" size="sm" onClick={handlePrint}>
-          <Printer className="mr-2 h-4 w-4" aria-hidden="true" />
+          <Printer className="mr-1.5 h-4 w-4 md:mr-2" aria-hidden="true" />
           인쇄
         </Button>
       </div>
 
-      <div className="flex gap-2 overflow-x-auto pb-2 print:hidden" role="tablist" aria-label="페이지 썸네일">
+      <div className="flex gap-1.5 overflow-x-auto pb-2 print:hidden md:gap-2" role="tablist" aria-label="페이지 썸네일">
         {photobookPhotos.map((photo, index) => (
           <button
             key={photo!.id}
             type="button"
             onClick={() => setCurrentPage(index)}
-            className={`h-16 w-16 shrink-0 overflow-hidden rounded-md border-2 transition-all ${
+            className={`h-14 w-14 shrink-0 overflow-hidden rounded-md border-2 transition-all md:h-16 md:w-16 ${
               currentPage === index
                 ? "border-primary ring-1 ring-primary/30"
                 : "border-transparent opacity-60 hover:opacity-100"

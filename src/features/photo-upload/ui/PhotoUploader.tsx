@@ -78,14 +78,14 @@ export const PhotoUploader = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-muted-foreground/25 bg-muted/30 p-8 transition-colors hover:border-muted-foreground/40 hover:bg-muted/50"
+      className="flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-muted-foreground/25 bg-muted/30 p-4 transition-colors hover:border-muted-foreground/40 hover:bg-muted/50 md:gap-4 md:p-8"
       onDrop={handleDrop}
       onDragOver={(e) => e.preventDefault()}
       role="region"
       aria-label="사진 업로드 영역"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-        <ImagePlus className="h-6 w-6 text-primary" aria-hidden="true" />
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 md:h-12 md:w-12">
+        <ImagePlus className="h-5 w-5 text-primary md:h-6 md:w-6" aria-hidden="true" />
       </div>
       <div className="text-center">
         <p className="text-sm font-medium text-foreground">

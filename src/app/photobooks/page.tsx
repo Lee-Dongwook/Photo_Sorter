@@ -20,16 +20,16 @@ export default function PhotobooksPage() {
   return (
     <div className="flex h-screen flex-col">
       <Header />
-      <main className="flex-1 overflow-y-auto p-6">
+      <main className="flex-1 overflow-y-auto p-3 md:p-6">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-6 flex items-center gap-4">
+          <div className="mb-4 flex items-center gap-3 md:mb-6 md:gap-4">
             <Link href="/">
               <Button variant="ghost" size="sm">
                 <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />
                 돌아가기
               </Button>
             </Link>
-            <h1 className="text-2xl font-bold">포토북 목록</h1>
+            <h1 className="text-xl font-bold md:text-2xl">포토북 목록</h1>
           </div>
 
           {photobooks.length === 0 ? (

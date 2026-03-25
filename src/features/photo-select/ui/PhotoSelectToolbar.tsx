@@ -37,13 +37,13 @@ export const PhotoSelectToolbar = () => {
   };
 
   return (
-    <div className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground shadow-lg">
-      <span className="text-sm font-medium">{count}장 선택</span>
-      <div className="mx-2 h-4 w-px bg-primary-foreground/30" />
+    <div className="flex flex-wrap items-center gap-2 rounded-lg bg-primary px-3 py-2 text-primary-foreground shadow-lg md:px-4">
+      <span className="text-xs font-medium md:text-sm">{count}장 선택</span>
+      <div className="mx-1 h-4 w-px bg-primary-foreground/30 md:mx-2" />
       <DropdownMenu>
         <DropdownMenuTrigger render={<Button variant="secondary" size="sm" />}>
-          <FolderInput className="mr-2 h-4 w-4" aria-hidden="true" />
-          활동 배정
+          <FolderInput className="mr-1.5 h-4 w-4 md:mr-2" aria-hidden="true" />
+          <span className="hidden sm:inline">활동 </span>배정
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem onClick={() => handleAssign(null)}>
@@ -65,7 +65,7 @@ export const PhotoSelectToolbar = () => {
         </DropdownMenuContent>
       </DropdownMenu>
       <Button variant="secondary" size="sm" onClick={handleDelete}>
-        <Trash2 className="mr-2 h-4 w-4" aria-hidden="true" />
+        <Trash2 className="mr-1.5 h-4 w-4 md:mr-2" aria-hidden="true" />
         삭제
       </Button>
       <Button

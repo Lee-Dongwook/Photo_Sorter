@@ -17,7 +17,7 @@ export default function PhotobookPage({
   return (
     <div className="flex h-screen flex-col">
       <Header />
-      <div className="flex items-center gap-2 border-b px-6 py-2">
+      <div className="flex items-center gap-2 border-b px-3 py-2 md:px-6">
         <Link href="/photobooks">
           <Button variant="ghost" size="sm">
             <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />

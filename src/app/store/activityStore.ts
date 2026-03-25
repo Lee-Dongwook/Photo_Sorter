@@ -5,11 +5,14 @@ import type { IActivity } from "app/entities/activity";
 interface IActivityState {
   activities: IActivity[];
   selectedActivityId: string | null;
+  sidebarOpen: boolean;
 
   addActivity: (activity: IActivity) => void;
   updateActivity: (id: string, updates: Partial<Omit<IActivity, "id">>) => void;
   removeActivity: (id: string) => void;
   selectActivity: (id: string | null) => void;
+  setSidebarOpen: (open: boolean) => void;
+  toggleSidebar: () => void;
 }
 
 export const useActivityStore = create<IActivityState>()(
@@ -17,6 +20,7 @@ export const useActivityStore = create<IActivityState>()(
     (set) => ({
       activities: [],
       selectedActivityId: null,
+      sidebarOpen: false,
 
       addActivity: (activity) =>
         set((state) => ({ activities: [...state.activities, activity] })),
@@ -36,9 +40,15 @@ export const useActivityStore = create<IActivityState>()(
         })),
 
       selectActivity: (id) => set({ selectedActivityId: id }),
+      setSidebarOpen: (open) => set({ sidebarOpen: open }),
+      toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
     }),
     {
       name: "activity-store",
+      partialize: (state) => ({
+        activities: state.activities,
+        selectedActivityId: state.selectedActivityId,
+      }),
     },
   ),
 );
